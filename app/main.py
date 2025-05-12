@@ -1,16 +1,16 @@
 class Battleship:
     def __init__(self, ships):
-        self.ship_fields = {}  # ship_id: list of remaining (x, y)
-        self.field = {}        # (x, y): ship_id
-        self.next_id = 0       # unikalne ID dla każdego statku
+        self.ship_fields = {}
+        self.field = {}
+        self.next_id = 0
 
         for start, end in ships:
             coords = []
 
-            if start[0] == end[0]:  # poziomy
+            if start[0] == end[0]:
                 for y in range(min(start[1], end[1]), max(start[1], end[1]) + 1):
                     coords.append((start[0], y))
-            elif start[1] == end[1]:  # pionowy
+            elif start[1] == end[1]:
                 for x in range(min(start[0], end[0]), max(start[0], end[0]) + 1):
                     coords.append((x, start[1]))
 
